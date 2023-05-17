@@ -63,7 +63,7 @@
 
 
 ## ERD
-![e-commerce-erd](https://user-images.githubusercontent.com/80667642/236681485-72c255f6-85a3-44bf-9277-458e8c5d700c.png)
+![e-commerce-erd](https://user-images.githubusercontent.com/80667642/238954303-159186be-1206-4980-b95e-abec139f72af.png)
 
 ## Trouble Shooting
 [go to the trouble shooting section](https://github.com/InHo5389/e-commerce/blob/main/doc/TROUBLE_SHOOTING.md#trouble-shooting)
