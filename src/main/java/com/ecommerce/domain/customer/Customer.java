@@ -19,6 +19,7 @@ public class Customer extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customer_id")
     private Long id;
 
     @Column(nullable = false, length = 30,unique = true)
@@ -77,6 +78,9 @@ public class Customer extends BaseTimeEntity {
 
     public void addCustomerAuthority(){
         this.roles = "ROLE_CUSTOMER";
+    }
+    public void addSellerAuthority(){
+        this.roles = "ROLE_SELLER";
     }
 
 }

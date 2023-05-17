@@ -20,10 +20,21 @@ public class CustomerServiceImpl implements CustomerService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public void signUp(CustomerSignUpDto customerSignUpDto) throws Exception {
+    public void signUpCustomer(CustomerSignUpDto customerSignUpDto) throws Exception {
         Customer customer = customerSignUpDto.toEntity();
         customer.encodePassword(passwordEncoder);
         customer.addCustomerAuthority();
+
+        if (customerRepository.findByUsername(customer.getUsername()).isPresent()) {
+            throw new Exception("이미 존재하는 아이디입니다.");
+        }
+        customerRepository.save(customer);
+    }
+    @Override
+    public void signUpSeller(CustomerSignUpDto customerSignUpDto) throws Exception {
+        Customer customer = customerSignUpDto.toEntity();
+        customer.encodePassword(passwordEncoder);
+        customer.addSellerAuthority();
 
         if (customerRepository.findByUsername(customer.getUsername()).isPresent()) {
             throw new Exception("이미 존재하는 아이디입니다.");

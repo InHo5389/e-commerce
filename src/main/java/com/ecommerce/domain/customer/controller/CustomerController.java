@@ -19,8 +19,15 @@ public class CustomerController {
 
     // customer 회원가입(인증x)
     @PostMapping("/signup/customer")
-    public String signup(@RequestBody CustomerSignUpDto customerSignUpDto) throws Exception {
-        customerService.signUp(customerSignUpDto);
+    public String signupCustomer(@RequestBody CustomerSignUpDto customerSignUpDto) throws Exception {
+        customerService.signUpCustomer(customerSignUpDto);
+        return "회원가입완료";
+    }
+
+    // seller 회원가입(인증x)
+    @PostMapping("/signup/seller")
+    public String signupSeller(@RequestBody CustomerSignUpDto customerSignUpDto) throws Exception {
+        customerService.signUpSeller(customerSignUpDto);
         return "회원가입완료";
     }
 

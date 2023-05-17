@@ -6,7 +6,8 @@ import com.ecommerce.domain.customer.dto.CustomerUpdateDto;
 
 public interface CustomerService {
 
-    void signUp(CustomerSignUpDto customerSignUpDto) throws Exception;
+    void signUpCustomer(CustomerSignUpDto customerSignUpDto) throws Exception;
+    void signUpSeller(CustomerSignUpDto customerSignUpDto) throws Exception;
 
     void update(CustomerUpdateDto customerUpdateDto) throws Exception;
 
