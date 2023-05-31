@@ -19,6 +19,9 @@ public class PrincipalDetails implements UserDetails {
         this.customer = customer;
     }
 
+    public PrincipalDetails() {
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new ArrayList<>();
